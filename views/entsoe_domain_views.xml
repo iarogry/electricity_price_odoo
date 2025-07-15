@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Види для моделі entsoe.domain -->
 <odoo>
-    <!-- Дія для моделі entsoe.domain -->
     <record id="entsoe_domain_action" model="ir.actions.act_window">
         <field name="name">Домени ENTSO-E</field>
         <field name="res_model">electricity.entsoe.domain</field>
@@ -15,7 +13,6 @@
         </field>
     </record>
 
-    <!-- Вид дерева (списку) для entsoe.domain -->
     <record id="entsoe_domain_view_tree" model="ir.ui.view">
         <field name="name">electricity.entsoe.domain.tree</field>
         <field name="model">electricity.entsoe.domain</field>
@@ -28,7 +25,6 @@
         </field>
     </record>
 
-    <!-- Вид форми для entsoe.domain -->
     <record id="entsoe_domain_view_form" model="ir.ui.view">
         <field name="name">electricity.entsoe.domain.form</field>
         <field name="model">electricity.entsoe.domain</field>
@@ -48,5 +44,15 @@
             </form>
         </field>
     </record>
-</odoo>
 
+    <record id="view_country_form_inherit_electricity_price" model="ir.ui.view">
+        <field name="name">res.country.form.inherit.electricity.price</field>
+        <field name="model">res.country</field>
+        <field name="inherit_id" ref="base.view_country_form"/>
+        <field name="arch" type="xml">
+            <field name="currency_id" position="after">
+                <field name="entsoe_domain_id"/>
+            </field>
+        </field>
+    </record>
+</odoo>
