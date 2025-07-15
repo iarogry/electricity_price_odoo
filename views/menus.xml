@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Меню модуля -->
 <odoo>
+    <data>
     <!-- Головне меню -->
     <menuitem id="menu_electricity_price_root"
               name="Ціни на Електроенергію РДН"
@@ -40,5 +41,5 @@
               parent="menu_electricity_price_configuration"
               action="res_config_settings_action_electricity_price"
               sequence="10"/>
-
+    </data>
 </odoo>
