@@ -2,6 +2,7 @@
 <!-- Види для моделі electricity.price.rdn -->
 <odoo>
     <!-- Дія для моделі electricity.price.rdn -->
+     <data>
     <record id="electricity_price_action" model="ir.actions.act_window">
         <field name="name">Ціни на Електроенергію РДН</field>
         <field name="res_model">electricity.price.rdn</field>
@@ -99,4 +100,5 @@
             </form>
         </field>
     </record>
+     </data>
 </odoo>
