@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Види для моделі entsoe.domain -->
 <odoo>
+    <data>
     <!-- Дія для моделі entsoe.domain -->
     <record id="entsoe_domain_action" model="ir.actions.act_window">
         <field name="name">Домени ENTSO-E</field>
@@ -48,4 +49,5 @@
             </form>
         </field>
     </record>
+    </data>
 </odoo>
