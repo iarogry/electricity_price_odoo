@@ -17,3 +17,11 @@ class ResConfigSettings(models.TransientModel):
         config_parameter='odoo_electricity_price.entsoe_api_token',
         help="Ваш персональний токен безпеки для доступу до API ENTSO-E. Отримайте його на сайті ENTSO-E."
     )
+class ResCountry(models.Model):
+    _inherit = 'res.country'
+
+    entsoe_domain_id = fields.Many2one(
+        'electricity.entsoe.domain',
+        string='Домен ENTSO-E',
+        help="Домен ENTSO-E, пов'язаний з цією країною для запитів цін на електроенергію."
+    )
