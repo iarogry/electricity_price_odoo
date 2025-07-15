@@ -52,4 +52,5 @@
         <field name="target">new</field>
         <field name="context">{'module' : 'odoo_electricity_price'}</field>
     </record>
+    </data>
 </odoo>
