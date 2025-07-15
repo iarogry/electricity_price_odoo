@@ -16,12 +16,12 @@
     'depends': ['base', 'web'], # Залежності модуля
     'data': [
         'security/ir.model.access.csv',
+         'views/entsoe_domain_views.xml', 
+        'views/electricity_price_views.xml',  
+        'wizards/import_price_wizard_views.xml', 
+        'views/res_country_views.xml',
+        'views/res_config_settings_views.xml',  
         'views/menus.xml',
-        'views/entsoe_domain_views.xml',
-        'views/electricity_price_views.xml',
-        'views/res_config_settings_views.xml',
-        'wizards/import_price_wizard_views.xml', # Виправлено назву файлу для майстра
-        'views/res_country_views.xml'
         'data/ir_cron.xml',
     ],
     'images': ['static/description/icon.png'], # Додайте іконку модуля
