@@ -5,7 +5,7 @@
         <field name="name">res.country.form.inherit.electricity.price</field>
         <field name="model">res.country</field>
         <field name="inherit_id" ref="base.view_country_form"/>
-        <field name="arch" type="xml">
+        <field name="arch" >
             <field name="currency_id" position="after">
                 <field name="entsoe_domain_id"/>
             </field>
