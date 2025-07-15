@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <data>
     <!-- Розширення виду форми для res.country -->
     <record id="view_country_form_inherit_electricity_price" model="ir.ui.view">
         <field name="name">res.country.form.inherit.electricity.price</field>
@@ -11,4 +12,5 @@
             </field>
         </field>
     </record>
+    </data>
 </odoo>
