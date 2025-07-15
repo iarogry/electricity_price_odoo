@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Види для моделі electricity.price.rdn -->
+<odoo>
+    <!-- Дія для моделі electricity.price.rdn -->
+    <record id="electricity_price_action" model="ir.actions.act_window">
+        <field name="name">Ціни на Електроенергію РДН</field>
+        <field name="res_model">electricity.price.rdn</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Тут будуть відображатися завантажені ціни на електроенергію.
+            </p><p>
+                Дані можуть бути імпортовані автоматично (за розкладом) або вручну.
+            </p>
+        </field>
+    </record>
+
+    <!-- Вид дерева (списку) для electricity.price.rdn -->
+    <record id="electricity_price_view_tree" model="ir.ui.view">
+        <field name="name">electricity.price.rdn.tree</field>
+        <field name="model">electricity.price.rdn</field>
+        <field name="arch" type="xml">
+            <tree string="Ціни на Електроенергію РДН" decoration-info="hour &lt; 6 or hour &gt; 21">
+                <field name="country_id"/>
+                <field name="price_date"/>
+                <field name="hour"/>
+                <field name="price"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Вид форми для electricity.price.rdn -->
+    <record id="electricity_price_view_form" model="ir.ui.view">
+        <field name="name">electricity.price.rdn.form</field>
+        <field name="model">electricity.price.rdn</field>
+        <field name="arch" type="xml">
+            <form string="Ціна на Електроенергію РДН">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="country_id"/>
+                            <field name="entsoe_domain_id"/>
+                        </group>
+                        <group>
+                            <field name="price_date"/>
+                            <field name="hour"/>
+                            <field name="price"/>
+                        </group>
+                    </group>
+                    <group string="Деталі API">
+                        <field name="api_response_raw"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Вид пошуку для electricity.price.rdn -->
+    <record id="electricity_price_view_search" model="ir.ui.view">
+        <field name="name">electricity.price.rdn.search</field>
+        <field name="model">electricity.price.rdn</field>
+        <field name="arch" type="xml">
+            <search string="Пошук цін на електроенергію">
+                <field name="country_id"/>
+                <field name="price_date"/>
+                <field name="hour"/>
+                <group expand="0" string="Групувати за">
+                    <filter name="group_by_country" string="Країна" context="{'group_by': 'country_id'}"/>
+                    <filter name="group_by_date" string="Дата" context="{'group_by': 'price_date'}"/>
+                    <filter name="group_by_hour" string="Година" context="{'group_by': 'hour'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Вид для майстра імпорту цін -->
+    <record id="electricity_price_import_wizard_action" model="ir.actions.act_window">
+        <field name="name">Імпорт цін на електроенергію</field>
+        <field name="res_model">electricity.price.import.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="electricity_price_import_wizard_form_view" model="ir.ui.view">
+        <field name="name">electricity.price.import.wizard.form</field>
+        <field name="model">electricity.price.import.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Імпорт цін на електроенергію">
+                <sheet>
+                    <group>
+                        <field name="country_id"/>
+                        <field name="import_date"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_import_prices" type="object" string="Імпортувати" class="oe_highlight"/>
+                    <button string="Скасувати" class="btn btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>
