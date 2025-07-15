@@ -9,8 +9,8 @@
         з Transparency Platform Restful API (ENTSO-E) для різних країн.
         Дані зберігаються з унікальною ідентифікацією за роком, місяцем, днем та годиною.
     """,
-    'author': "Ваше Ім'я", # Замініть на ваше ім'я
-    'website': "http://www.yourcompany.com", # Замініть на ваш вебсайт
+    'author': "Ярослав Гришин", # Замініть на ваше ім'я
+    'website': "http://www.hlibodar.com.ua", # Замініть на ваш вебсайт
     'category': 'Custom/Electricity',
     'version': '1.0',
     'depends': ['base', 'web'], # Залежності модуля
@@ -21,6 +21,7 @@
         'views/electricity_price_views.xml',
         'views/res_config_settings_views.xml',
         'wizards/import_price_wizard_views.xml', # Виправлено назву файлу для майстра
+        'views/res_country_views.xml'
         'data/ir_cron.xml',
     ],
     'images': ['static/description/icon.png'], # Додайте іконку модуля
