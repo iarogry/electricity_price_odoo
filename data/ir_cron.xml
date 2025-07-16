@@ -1,19 +1,20 @@
+
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Планова дія (cron job) для автоматичного завантаження цін -->
 <odoo>
     <data>
-    <record id="ir_cron_fetch_daily_electricity_prices" model="ir.cron">
-        <field name="name">Щоденне завантаження цін на електроенергію РДН</field>
-        <field name="model_id" ref="model_electricity_price_rdn"/>
-        <field name="state">code</field>
-        <field name="code">model._cron_fetch_daily_prices()</field>
-        <field name="interval_number">1</field>
-        <field name="interval_type">days</field>
-        <field name="numbercall">-1</field> <!-- Безлімітна кількість викликів -->
-        <field name="doall" eval="False"/>
-        <field name="nextcall" eval="(DateTime.now() + timedelta(days=1)).replace(hour=14, minute=0, second=0, microsecond=0)"/>
-        <!-- Запускається щодня о 14:00 за часом сервера Odoo. -->
-        <!-- Якщо потрібен локальний час, переконайтеся, що часовий пояс сервера Odoo відповідає місцевому часу або додайте логіку конвертації. -->
-    </record>
+        <record id="ir_cron_fetch_daily_electricity_prices" model="ir.cron">
+            <field name="name">Щоденне завантаження цін на електроенергію РДН</field>
+            <field name="model_id" ref="model_electricity_price_rdn"/>
+            <field name="state">code</field>
+            <field name="code">model._cron_fetch_daily_prices()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field> <!-- Безлімітна кількість викликів -->
+            <field name="doall" eval="False"/>
+            <field name="nextcall" eval="(DateTime.now() + timedelta(days=1)).replace(hour=14, minute=0, second=0, microsecond=0)"/>
+            <!-- Запускається щодня о 14:00 за часом сервера Odoo. -->
+            <!-- Якщо потрібен локальний час, переконайтеся, що часовий пояс сервера Odoo відповідає місцевому часу або додайте логіку конвертації. -->
+        </record>
     </data>
 </odoo>
